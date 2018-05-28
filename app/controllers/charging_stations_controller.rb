@@ -1,0 +1,2 @@
+class ChargingStationsController < ApplicationController
+end
