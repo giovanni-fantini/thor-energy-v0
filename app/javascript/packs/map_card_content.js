@@ -16,7 +16,8 @@ const mapCardContent = (chargingStation) => {
         </p>
       </div>
       <div class="buttons">
-
+        <div class="btn btn-primary">Create journey</div>
+        <div class="btn btn-primary">Reserve battery</div>
       </div>
     </div>
   `;

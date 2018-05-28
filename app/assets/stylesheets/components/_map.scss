@@ -32,6 +32,14 @@
         color: $yellow-primary;
       }
     }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn {
+      flex: 0 0 47%;
+      border-radius: 999999px;
+    }
   }
 
 }
