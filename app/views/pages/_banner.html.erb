@@ -1,0 +1,20 @@
+<div class="banner" style="background-image:  url(<%= image_path('banner.jpg') %>)">
+  <div class="banner-content">
+    <h1>Need a<br>charger?</h1>
+    <p>_______</p>
+    <div class="form-search">
+      <div class="form">
+        <%= form_tag "#", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control-banner",
+            placeholder: "Where are you?"
+          %>
+        <% end %>
+      </div>
+      <div class="search">
+        <%= link_to "Search", "#", class: "bttn-yellow" %>
+      </div>
+    </div>
+  </div>
+</div>
