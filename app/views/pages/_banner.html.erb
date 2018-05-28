@@ -1,20 +1,26 @@
 <div class="banner" style="background-image:  url(<%= image_path('banner.jpg') %>)">
-  <div class="banner-content">
-    <h1>Need a<br>charger?</h1>
-    <p>_______</p>
-    <div class="form-search">
-      <div class="form">
-        <%= form_tag "#", method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control-banner",
-            placeholder: "Where are you?"
-          %>
-        <% end %>
-      </div>
-      <div class="search">
-        <%= link_to "Search", "#", class: "bttn-yellow" %>
+  <!-- <div class="banner-content"> -->
+    <div class="container">
+      <div class="row text-center">
+        <h1>Need a<br>charger?</h1>
+        <p>_______</p>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <!-- <div class="form-search"> -->
+            <div class="form-inline">
+              <%= form_tag "#", method: :get do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control-banner",
+                  placeholder: "Where are you?"
+                %>
+                <!-- <div class="search"> -->
+              <%= link_to "Search", "#", class: "bttn-yellow" %>
+            <!-- </div> -->
+              <% end %>
+            </div>
+          <!-- </div> -->
+        </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
