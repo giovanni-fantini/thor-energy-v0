@@ -1,7 +1,4 @@
-// Styles a map in night mode.
 var map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 40.674, lng: -73.945},
-  zoom: 12,
   styles: [
     {
       "elementType": "geometry",
@@ -287,3 +284,30 @@ var map = new google.maps.Map(document.getElementById('map'), {
   ]
 });
 
+const bounds = new google.maps.LatLngBounds();
+
+JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => {
+  const marker = new google.maps.Marker({
+    position: element["position"],
+    map: map,
+    title: element["title"]
+  });
+
+  bounds.extend(marker.position);
+})
+
+map.fitBounds(bounds)
+
+
+// var myLatLng = {lat: -25.363, lng: 131.044};
+
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 4,
+//     center: myLatLng
+//   });
+
+//   var marker = new google.maps.Marker({
+//     position: myLatLng,
+//     map: map,
+//     title: 'Hello World!'
+//   });
