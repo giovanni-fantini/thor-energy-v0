@@ -1,0 +1,81 @@
+.banner-2 {
+  background-color: white;
+  // height: 100vh;
+}
+
+.banner-2 h1 {
+  font-size: 48px;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+}
+
+.banner-2 p {
+  color: $yellow-primary;
+  font-size: 32px;
+  position: relative;
+  left: 20px;
+  top: -30px;
+}
+
+.how .mini-header {
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.how p {
+  color: $dark-gray;
+  font-size: 20px;
+  padding-right: 40px;
+}
+
+.phone img {
+  max-width: 100%;
+  position: relative;
+  top: -30px;
+  max-height: 80%;
+}
+
+@media (max-width: 992px) {
+  .how p {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+  .how .mini-header {
+    font-size: 18px;
+  }
+  .phone img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .how p {
+    font-size: 14px;
+    padding-right: 10px;
+  }
+  .how .mini-header {
+    font-size: 16px;
+  }
+  .phone img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .how p {
+    font-size: 12px;
+    padding-right: 10px;
+  }
+  .how .mini-header {
+    font-size: 14px;
+  }
+  .phone img {
+    max-width: 100%;
+  }
+}
+
+
+

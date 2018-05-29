@@ -1,9 +1,8 @@
 /* Main navbar */
 .navbar-wagon {
-  background: transparent;
+  background: #212322;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 30px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +10,7 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 100px;
+  height: 80px;
 }
 
 /* User Avatar */
@@ -41,12 +40,12 @@
 
 .fa-map-marker-alt:hover {
   color: $yellow-secondary;
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .fa-bars:hover {
   color: $yellow-secondary;
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 /* Navbar link */
@@ -62,19 +61,20 @@
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  // box-shadow: 1px 1px 4px #E6E6E6;
-  // border-color: #E6E6E6;
   background-color: gray;
   text-align: right;
-  opacity: 0.9;
+  opacity: 0.8;
+  border: none;
+  position: absolute;
+  right: -20px;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
-  // font-weight: lighter !important;
   color: white !important;
   font-size: 15px !important;
   line-height: 11px !important;
   padding: 10px 20px;
+  opacity: 1 !important;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;

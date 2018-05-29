@@ -1,8 +1,14 @@
+
+// Styles a map in night mode.
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
+
 import { mapCardContent } from "./map_card_content";
 import { routeCardContent } from "./route_card_content";
 import { autocomplete } from './autocomplete';
 
 // This is the map
+
 var map = new google.maps.Map(document.getElementById('map'), {
   styles: [
     {
