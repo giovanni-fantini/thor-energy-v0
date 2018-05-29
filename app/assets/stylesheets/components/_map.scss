@@ -1,45 +1,108 @@
-#map {
+.card {
   color: $black-primary;
-
-  .card {
-    background-color: white;
-    width: 100%;
-    height: 45vh;
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  .container {
+    margin: 0 40px;
     position: relative;
-    top: 55vh;
-    border-radius: 20px 20px 0 0;
+    height: 100%;
+    padding: 0;
     h1 {
       font-size: 18px;
       font-weight: bold;
+      margin-top: 0;
     }
-    .address {
-      h2 {
-      font-size: 16px;
-      font-weight: 600;
-      }
+    .blob {
+      background-color: $light-gray;
+      width: 40px;
+      height: 5px;
+      border-radius: 5px;
+      margin: 20px auto;
     }
-    .battery-info {
-      h2 {
-        font-size: 16px;
-        font-weight: 600;
+    form {
+      .form-control {
+        color: black;
       }
-      p {
-        font-size: 32px;
-        font-weight: 600;
-        color: $light-gray;
-      }
-      .yellow {
-        color: $yellow-primary;
+      .btn {
+        width: 100%;
+        // position: fixed;
+        // bottom: 0;
       }
     }
-    .buttons {
+    .inner-content {
+      margin-top: 10px;
       display: flex;
-      justify-content: space-between;
+      .graphic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        margin-right: 20px;
+        .line {
+          border: 1px dashed $light-gray;
+          flex: 1;
+          margin: 10px 0;
+        }
+        .dot.solid {
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          background-color: $yellow-primary;
+        }
+        .dot.ring {
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          border: 3px solid $yellow-primary;
+        }
+      }
+      .text {
+        .address {
+          h2 {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 0;
+          }
+          p {
+            color: $dark-gray;
+            margin: 0;
+          }
+        }
+        .battery-info {
+          h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+          p {
+            font-size: 32px;
+            font-weight: 600;
+            color: $light-gray;
+          }
+          .yellow {
+            color: $yellow-primary;
+          }
+        }
+      }
+    }
+    .bottom {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
     }
     .btn {
       flex: 0 0 47%;
       border-radius: 999999px;
     }
   }
-
 }
+

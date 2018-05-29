@@ -9,7 +9,8 @@ class ChargingStationsController < ApplicationController
         title: charging_station.location_title,
         address: charging_station.address,
         capacity: charging_station.capacity,
-        battery_count: charging_station.battery_count
+        battery_count: charging_station.battery_count,
+        id: charging_station.id
       }
     end
   end
