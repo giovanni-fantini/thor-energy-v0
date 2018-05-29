@@ -1,23 +1,37 @@
 const mapCardContent = (chargingStation) => {
-  console.log(chargingStation)
   const html = `
     <div class="container">
-      <h1 class="text-center">${chargingStation.title}</h1>
-      <div class="address">
-        <h2>Address</h2>
-        <p>${chargingStation.address}</p>
-      </div>
-      <div class="battery-info">
-        <h2>Batteries available</h2>
-        <p>
-          <span class="yellow">${chargingStation.battery_count} </span>
-          <span>/ </span>
-          <span>${chargingStation.capacity}</span>
-        </p>
-      </div>
-      <div class="buttons">
-        <div class="btn btn-primary">Create journey</div>
-        <div class="btn btn-primary">Reserve battery</div>
+      <div class="blob"></div>
+      <div class="content">
+        <h1 class="text-center">${chargingStation.title}</h1>
+        <div class="inner-content">
+          <div class="graphic">
+            <div class="dot solid"></div>
+            <div class="line"></div>
+            <div class="dot ring"></div>
+          </div>
+          <div class="text">
+            <div class="address">
+              <h2>Address</h2>
+              <p>${chargingStation.address}</p>
+              <p><strong style="color: black;">Lat: </strong>${chargingStation.position.lat} <strong style="color: black;">Lng: </strong>${chargingStation.position.lng}</p>
+            </div>
+            <div class="battery-info">
+              <h2>Batteries available</h2>
+              <p>
+                <span class="yellow">${chargingStation.battery_count} </span>
+                <span>/ </span>
+                <span>${chargingStation.capacity}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="buttons">
+            <div id="create-journey" class="btn btn-primary btn-sm">Create journey</div>
+            <div class="btn btn-primary btn-sm">Reserve battery</div>
+          </div>
+        </div>
       </div>
     </div>
   `;
