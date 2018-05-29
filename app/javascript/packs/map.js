@@ -1,4 +1,6 @@
 // Styles a map in night mode.
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
 var map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: 40.674, lng: -73.945},
   zoom: 12,

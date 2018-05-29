@@ -1,4 +1,5 @@
-<div class="navbar-wagon navbar-fixed-top">
+<!-- <div class="navbar-wagon navbar-fixed-top"> -->
+<div class="navbar-wagon <%= 'navbar-fixed-top' if params[:action] == 'home' %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>

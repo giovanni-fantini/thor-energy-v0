@@ -1,0 +1,15 @@
+<!-- Needs fixing on color of text -->
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for @charging_station do |f| %>
+    <%= f.input :location_title, input_html: { class: "text-dark"} %>
+    <%= f.input :address, input_html: { class: "text-dark"} %>
+    <%= f.input :capacity %>
+    <%= f.input :battery_count %>
+    <%= f.input :status, label: "Active?" %>
+    <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
