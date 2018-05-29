@@ -3,7 +3,7 @@ const routeCardContent = () => {
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Where are you going?</label>
-        <input type="text" class="form-control" id="destination" aria-describedby="emailHelp">
+        <input type="text" class="form-control autocomplete" id="destination" aria-describedby="emailHelp">
       </div>
       <button type="submit" class="btn btn-primary">Go</button>
     </form>

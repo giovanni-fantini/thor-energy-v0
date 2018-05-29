@@ -5,7 +5,6 @@ autocomplete();
 
 import { mapCardContent } from "./map_card_content";
 import { routeCardContent } from "./route_card_content";
-import { autocomplete } from './autocomplete';
 
 // This is the map
 
