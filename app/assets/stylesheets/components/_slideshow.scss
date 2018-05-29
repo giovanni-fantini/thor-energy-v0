@@ -1,0 +1,39 @@
+#myCarousel {
+  background-size: cover !important;
+  text-align: center;
+  color: white;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.car-position {
+  position: absolute;
+  top: 500px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.car-img {
+  height: 100vh;
+  background-size: cover;
+}
+
+.main-header {
+  position: absolute;
+  top: 300px;
+  margin: 0 auto;
+  z-index: 10;
+  font-size: 48px;
+}
+
+.sub-header {
+  position: relative;
+  top: 400px;
+  right: center auto;
+  z-index: 10;
+  opacity: .8;
+  font-size: 20px;
+}
