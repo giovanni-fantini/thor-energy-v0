@@ -1,8 +1,11 @@
 class ChargingStation < ApplicationRecord
+
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  validates :capacity, :address, :status, presence: true
+  validates :capacity, :address, :longitude, :latitude, :status, presence: true
+
   validates :capacity, inclusion: {in: (1..80).to_a, message: "%{value} is not a valid capacity (min 1, max 80)"}
   validates :capacity, numericality: { only_integer: true }
   validates :status, inclusion: {in: [true, false] }

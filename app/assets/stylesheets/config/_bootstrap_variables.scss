@@ -16,12 +16,12 @@ $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+$text-color: $black-primary;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
-
 
 // Patch to make simple_form compatible with bootstrap 3
 .invalid-feedback {
