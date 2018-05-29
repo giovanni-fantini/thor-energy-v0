@@ -7,12 +7,17 @@
 }
 
 .banner h1 {
-  font-size: 50px;
+  font-size: 56px;
   font-weight: bold;
+  position: absolute;
+  top: -170px;
 }
 
 .banner p {
   color: $yellow-primary;
+  font-size: 32px;
+  position: absolute;
+  top: -52.5px;
 }
 
 
@@ -21,8 +26,13 @@
   background-color: transparent;
   border: 1px solid $yellow-primary;
   border-color: $yellow-primary;
-  padding: 10px 35px;
+  padding: 10px 20px;
   border-radius: 30px;
   color: $yellow-primary;
   text-decoration: none;
+  outline: none;
+}
+
+.form-control-banner::placeholder {
+  color: $yellow-primary;
 }
