@@ -23,8 +23,8 @@ class ChargingStationsController < ApplicationController
   def create
     #add redirecting if user is not admin
     @charging_station = ChargingStation.new(charging_station_params)
-    if @charging_station.save
-      redirect_to charging_station_path(@charging_station)
+    if @charging_station.save!
+      redirect_to charging_stations_path
     else
       render :new
     end
