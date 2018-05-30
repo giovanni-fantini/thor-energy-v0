@@ -34,8 +34,9 @@ const updateUserPosition = () => {
 
       userLocation.setPosition(pos)
 
-    }, function() {
-      handleLocationError(true, userLocation, map.getCenter());
+    }, function(error) {
+      console.error(error)
+      // handleLocationError(true, userLocation, map.getCenter());
     });
   }
   console.log("hi")
@@ -68,9 +69,13 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
   // Markers made clickable
   marker.addListener('click', (event) => {
     document.getElementById('map').insertAdjacentHTML("afterend", `<div data-charging-machine-id=${element["id"]} id="card" class="card">${mapCardContent(element)}</div>`)
+    document.getElementById("map").style.height = "calc(100vh - 300px)"
+    map.setCenter(marker.getPosition())
+    map.setZoom(16);
     // cards made closeable
     document.querySelector(".blob").addEventListener("click", () => {
       document.getElementById("card").remove()
+      document.getElementById("map").style.height = "100vh"
     })
     // create-journey button functionality
     document.getElementById('create-journey').addEventListener("click", () => {
