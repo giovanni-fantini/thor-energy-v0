@@ -1,0 +1,96 @@
+// BACKGROUND
+.banner-3 {
+  background-color: $lighter-gray;
+}
+
+// PRICING HEADER
+.pricing-header h1 {
+  font-size: 48px;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+}
+
+.pricing-header p {
+  color: $yellow-primary;
+  font-size: 32px;
+  position: relative;
+  left: 20px;
+  top: -30px;
+}
+
+// PRICING INFORMATION BOX
+.pricing-card-container {
+  background-color: $white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card-row-1{
+  background-color: $white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.pricing-card-row-1 h1 {
+  color: $black;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 0.5px $lighter-gray;
+}
+
+.pricing-card-row-2 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: $dark-gray;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pricing-card-row-3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
+  color: $dark-gray;
+  font-size: 18px;
+}
+
+.price {
+  color: $yellow-primary;
+  font-size: 40px;
+}
+
+.fa-bolt{
+  color: $yellow-primary;
+}
+.fa-clock{
+  color: $yellow-primary;
+}
+.fa-credit-card{
+  color: $yellow-primary;
+}
+
+//--------- CONTAINER FOR CREATE ACCOUNT BOX --------//
+.pricing-create-account-container {
+  background-color: $black;
+  color: $white;
+}
+
+.pricing-create-account-container h1 {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
