@@ -5,8 +5,8 @@ const routeCardContent = () => {
         <label for="exampleInputEmail1">Where are you going?</label>
         <input type="text" class="form-control autocomplete" id="destination" aria-describedby="emailHelp">
       </div>
-      <button type="submit" class="btn btn-primary">Go</button>
     </form>
+      <button id="route-search" type="" class="btn btn-primary">Go</button>
   `;
   return html
 }
