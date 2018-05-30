@@ -6,8 +6,7 @@ autocomplete();
 import { mapCardContent } from "./map_card_content";
 import { routeCardContent } from "./route_card_content";
 
-// This is the map
-
+// This is the map and map-directions configuration:
 var map = new google.maps.Map(document.getElementById('map'), {
   styles: [
     {
@@ -293,6 +292,15 @@ var map = new google.maps.Map(document.getElementById('map'), {
     }
   ]
 });
+const userRoute = new google.maps.DirectionsService
+const renderRoute = new google.maps.DirectionsRenderer({
+  polylineOptions: {
+    strokeColor: "rgb(255,194,21)",
+    strokeOpacity: 0.7,
+    strokeWeight: 8
+  }
+});
+renderRoute.setMap(map)
 
 
 // This is an empty map-bounds object
@@ -305,7 +313,9 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
     position: element["position"],
     map: map,
     title: element["title"],
-    icon: document.getElementById('map').dataset.image
+    icon: document.getElementById('map').dataset.image,
+    // Bouncing animation
+    animation: google.maps.Animation.DROP
   });
 
   // Adds coordinates of station to bounds
@@ -313,21 +323,38 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
 
   // Markers made clickable
   marker.addListener('click', (event) => {
-    document.getElementById('map').insertAdjacentHTML("afterend", `<div id="card" class="card">${mapCardContent(element)}</div>`)
+    document.getElementById('map').insertAdjacentHTML("afterend", `<div data-charging-machine-id=${element["id"]} id="card" class="card">${mapCardContent(element)}</div>`)
+    // cards made closeable
     document.querySelector(".blob").addEventListener("click", () => {
       document.getElementById("card").remove()
     })
+    // create-journey button functionality
     document.getElementById('create-journey').addEventListener("click", () => {
       document.querySelector('.content').innerHTML = ""
       document.querySelector('.content').insertAdjacentHTML("afterbegin", routeCardContent())
       autocomplete()
+      // Go button funcitonality
+      document.getElementById('route-search').addEventListener("click", () => {
+        // define route parameters for Google API
+        userRoute.route({
+          origin: element["position"],
+          destination: document.getElementById('destination').value,
+          travelMode: 'WALKING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            // add route to map
+            renderRoute.setDirections(response);
+            console.log("success")
+          } else {
+            console.log("error but it is working!")
+          }
+        });
+        document.querySelector('.content').innerHTML = ""
+        renderRoute.setPanel(document.querySelector('#card .container'));
+      })
     })
   });
 })
-
-
-// Enables card to be closed by clicking on blob
-
 
 // Imposes bounds on map to achieve approriate centring and zoom
 map.fitBounds(bounds)
