@@ -13,9 +13,13 @@ import { directionsRendererOptions } from '../components/directions_renderer_opt
 var map = new google.maps.Map(document.getElementById('map'), {
   styles: mapStyle
 });
+const userIcon = {
+  url: document.getElementById('map').dataset.userimage,
+  scaledSize: new google.maps.Size(20, 20),
+};
 const userLocation = new google.maps.Marker({
   map: map,
-  icon: document.getElementById('map').dataset.userimage,
+  icon: userIcon,
   zIndex: 999999,
 })
 const userRoute = new google.maps.DirectionsService
@@ -50,6 +54,11 @@ setInterval(updateUserPosition, 1000)
 // This is an empty map-bounds object
 const bounds = new google.maps.LatLngBounds();
 
+const markerIcon = {
+  url: document.getElementById('map').dataset.markerimage,
+  scaledSize: new google.maps.Size(50, 50),
+};
+
 
 // This iterates over each charging_station
 JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => {
@@ -57,7 +66,8 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
     position: element["position"],
     map: map,
     title: element["title"],
-    icon: document.getElementById('map').dataset.markerimage,
+    icon: markerIcon, // document.getElementById('map').dataset.markerimage,
+    size: new google.maps.Size(20, 32),
     // setZIndex: 1,
     // Bouncing animation
     animation: google.maps.Animation.DROP
