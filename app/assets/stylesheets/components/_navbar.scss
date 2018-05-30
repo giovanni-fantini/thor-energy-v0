@@ -54,22 +54,22 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: $white;
+  color: $yellow-primary;
   text-decoration: none;
 }
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  background-color: $light-gray;
+  background-color: $black;
   text-align: right;
-  opacity: 0.8;
+  opacity: 0.9;
   border: none;
   position: absolute;
   right: -20px;
 }
 .navbar-wagon-dropdown-menu li > a {
-  transition: color 0.3s ease;
+  // transition: color 0.3s ease;
   color: $white !important;
   font-size: 15px !important;
   line-height: 11px !important;
