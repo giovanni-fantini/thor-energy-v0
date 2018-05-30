@@ -5,306 +5,59 @@ autocomplete();
 
 import { mapCardContent } from "./map_card_content";
 import { routeCardContent } from "./route_card_content";
+import { mapStyle } from '../components/map_style';
+import { directionsRendererOptions } from '../components/directions_renderer_options';
+// import { geolocator } from '../components/geolocator';
 
 // This is the map and map-directions configuration:
 var map = new google.maps.Map(document.getElementById('map'), {
-  styles: [
-    {
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#f5f5f5"
-        }
-      ]
-    },
-    {
-      "elementType": "labels.icon",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#616161"
-        }
-      ]
-    },
-    {
-      "elementType": "labels.text.stroke",
-      "stylers": [
-        {
-          "color": "#f5f5f5"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.land_parcel",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#bdbdbd"
-        }
-      ]
-    },
-    {
-      "featureType": "landscape",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#fcf8f0"
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#eeeeee"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#d3d0cb"
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#757575"
-        }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#e5e5e5"
-        }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#cce4cd"
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "poi.park",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#9e9e9e"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#ffffff"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#9aa0a8"
-        },
-        {
-          "lightness": 25
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "road.arterial",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "lightness": 40
-        }
-      ]
-    },
-    {
-      "featureType": "road.arterial",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#757575"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#dadada"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#8fa1b6"
-        },
-        {
-          "saturation": -60
-        },
-        {
-          "lightness": -15
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "geometry.stroke",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "road.highway",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#616161"
-        }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "lightness": 60
-        }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#9e9e9e"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#d3d0cb"
-        },
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "transit.line",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#e5e5e5"
-        }
-      ]
-    },
-    {
-      "featureType": "transit.station",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#eeeeee"
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "color": "#c9c9c9"
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "geometry.fill",
-      "stylers": [
-        {
-          "color": "#94e8f2"
-        },
-        {
-          "saturation": -35
-        }
-      ]
-    },
-    {
-      "featureType": "water",
-      "elementType": "labels.text.fill",
-      "stylers": [
-        {
-          "color": "#9e9e9e"
-        }
-      ]
-    }
-  ]
+  styles: mapStyle
 });
+const userIcon = {
+  url: document.getElementById('map').dataset.userimage,
+  scaledSize: new google.maps.Size(20, 20),
+};
+const userLocation = new google.maps.Marker({
+  map: map,
+  icon: userIcon,
+  zIndex: 999999,
+})
 const userRoute = new google.maps.DirectionsService
-const renderRoute = new google.maps.DirectionsRenderer({
-  polylineOptions: {
-    strokeColor: "rgb(255,194,21)",
-    strokeOpacity: 0.7,
-    strokeWeight: 8
-  }
-});
+const renderRoute = new google.maps.DirectionsRenderer(directionsRendererOptions);
 renderRoute.setMap(map)
+
+
+// User geolocation configuration
+const updateUserPosition = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      userLocation.setPosition(pos)
+
+    }, function(error) {
+      console.error(error)
+      // handleLocationError(true, userLocation, map.getCenter());
+    });
+  }
+  console.log("hi")
+}
+
+setInterval(updateUserPosition, 1000)
+
+
 
 
 // This is an empty map-bounds object
 const bounds = new google.maps.LatLngBounds();
+
+const markerIcon = {
+  url: document.getElementById('map').dataset.markerimage,
+  scaledSize: new google.maps.Size(50, 50),
+};
 
 
 // This iterates over each charging_station
@@ -313,7 +66,9 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
     position: element["position"],
     map: map,
     title: element["title"],
-    icon: document.getElementById('map').dataset.image,
+    icon: markerIcon, // document.getElementById('map').dataset.markerimage,
+    size: new google.maps.Size(20, 32),
+    // setZIndex: 1,
     // Bouncing animation
     animation: google.maps.Animation.DROP
   });
@@ -324,9 +79,13 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
   // Markers made clickable
   marker.addListener('click', (event) => {
     document.getElementById('map').insertAdjacentHTML("afterend", `<div data-charging-machine-id=${element["id"]} id="card" class="card">${mapCardContent(element)}</div>`)
+    document.getElementById("map").style.height = "calc(100vh - 300px)"
+    map.setCenter(marker.getPosition())
+    map.setZoom(16);
     // cards made closeable
     document.querySelector(".blob").addEventListener("click", () => {
       document.getElementById("card").remove()
+      document.getElementById("map").style.height = "100vh"
     })
     // create-journey button functionality
     document.getElementById('create-journey').addEventListener("click", () => {
