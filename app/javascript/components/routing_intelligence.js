@@ -3,7 +3,7 @@ import { optimalRoute } from './optimal_route'
 import { directionsRendererOptions } from './directions_renderer_options';
 
 
-const routingIntelligence = (element, destination, markers, map) => {
+const routingIntelligence = (modeTransport, element, destination, markers, map) => {
 
   const renderRoute = new google.maps.DirectionsRenderer(directionsRendererOptions);
   renderRoute.setMap(map)
@@ -20,7 +20,7 @@ const routingIntelligence = (element, destination, markers, map) => {
         lng = results[0].geometry.location.lng()
 
         const closestStations = fourClosestStations(lat, lng, markers)
-       optimalRoute(closestStations, element, destination)
+       optimalRoute(modeTransport, closestStations, element, destination)
         .then((response) => {
           renderRoute.setDirections(response);
           document.querySelector('.content').innerHTML = ""

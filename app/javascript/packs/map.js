@@ -7,6 +7,7 @@ import { cardCloseable } from '../components/card_closeable'
 import { userIcon } from '../components/user_icon'
 import { markerIcon } from '../components/marker_icon'
 import { routingIntelligence } from '../components/routing_intelligence'
+import { removeTransportSelection } from '../components/remove_transport_selection'
 // import { LAT } from '../components/four_closest_stations'
 
 
@@ -69,12 +70,33 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
         document.querySelector('.content').innerHTML = ""
         document.querySelector('.content').insertAdjacentHTML("afterbegin", routeCardContent(element))
         autocomplete()
+        let modeTransport = "WALKING"
+
+        document.querySelector(".fa-car").addEventListener("click", () => {
+          removeTransportSelection()
+          document.querySelector(".fa-car").classList.add("active")
+          modeTransport = "DRIVING"
+        })
+        document.querySelector(".fa-walking").addEventListener("click", () => {
+          removeTransportSelection()
+          document.querySelector(".fa-walking").classList.add("active")
+          modeTransport = "WALKING"
+        })
+        document.querySelector(".fa-bicycle").addEventListener("click", () => {
+          removeTransportSelection()
+          document.querySelector(".fa-bicycle").classList.add("active")
+          modeTransport = "BICYCLING"
+        })
+        document.querySelector(".fa-subway").addEventListener("click", () => {
+          removeTransportSelection()
+          document.querySelector(".fa-subway").classList.add("active")
+          modeTransport = "TRANSIT"
+        })
         // Go button functionality
         document.getElementById('route-search').addEventListener("click", () => {
           const destination = document.getElementById('destination').value
-
           //// Route planning intelligence ////
-          routingIntelligence(element, destination, markers, map)
+          routingIntelligence(modeTransport, element, destination, markers, map)
           /////////////////////////////////////////
         })
       })
