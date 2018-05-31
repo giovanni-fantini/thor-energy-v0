@@ -8,13 +8,8 @@ import { userIcon } from '../components/user_icon'
 import { markerIcon } from '../components/marker_icon'
 import { routingIntelligence } from '../components/routing_intelligence'
 import { removeTransportSelection } from '../components/remove_transport_selection'
-// import { LAT } from '../components/four_closest_stations'
 
-
-
-autocomplete();
-
-
+// REMOVED AUTOCOMPLETE CALL FROM HERE
 ////////// MAP //////////
 
 // This is the map and map-directions configuration:
