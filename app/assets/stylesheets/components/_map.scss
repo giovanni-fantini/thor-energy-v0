@@ -28,6 +28,16 @@
       border-radius: 5px;
       margin: 20px auto;
     }
+    .transport {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      font-size: 32px;
+      color: $light-gray;
+      .fas.active {
+        color: $yellow-primary;
+      }
+    }
     form {
       .form-control {
         color: black;

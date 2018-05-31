@@ -1,4 +1,4 @@
-const optimalRoute = (stations, element, destination) => {
+const optimalRoute = (modeTransport, stations, element, destination) => {
   let minDuration = Math.pow(10, 10)
   let shortestRoute
   let arrayOfPromises = []
@@ -41,7 +41,7 @@ const optimalRoute = (stations, element, destination) => {
           origin: element["position"],
           destination: destination,
           waypoints: [{location: station.position, stopover: false}],
-          travelMode: 'WALKING'
+          travelMode: modeTransport
         }, pushPromisesAndWait);
       })
   })
