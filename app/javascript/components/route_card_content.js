@@ -1,5 +1,6 @@
-const routeCardContent = () => {
+const routeCardContent = (chargingStation) => {
   const html = `
+    <h1 class="text-center">${chargingStation.title}</h1>
     <form>
       <div class="form-group">
         <label for="exampleInputEmail1">Where are you going?</label>
