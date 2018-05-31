@@ -15,18 +15,40 @@ class ChargingStationsController < ApplicationController
     end
   end
 
+  def show
+    @charging_station = ChargingStation.find(params[:id])
+    authorize @charging_station
+  end
+
   def new
     #add redirecting if user is not admin
     @charging_station = ChargingStation.new()
+    authorize @charging_station
   end
 
   def create
     #add redirecting if user is not admin
     @charging_station = ChargingStation.new(charging_station_params)
     if @charging_station.save!
-      redirect_to charging_stations_path
+      redirect_to charging_station_path(@charging_station)
     else
       render :new
+    end
+      authorize @charging_station
+  end
+
+  def edit
+    @charging_station = ChargingStation.find(params[:id])
+    authorize @charging_station
+  end
+
+  def update
+    @charging_station = ChargingStation.find(params[:id])
+    authorize @charging_station
+    if @charging_station.update(charging_station_params)
+      redirect_to charging_station_path(@charging_station)
+    else
+      render :edit
     end
   end
 

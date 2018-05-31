@@ -59,9 +59,11 @@
   padding-bottom: 20px;
   padding-right: 50px;
   padding-left: 50px;
-  text-align: center;
+  text-align: left;
   color: $dark-gray;
   font-size: 18px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .price {
@@ -70,13 +72,25 @@
 }
 
 .fa-bolt{
-  color: $yellow-primary;
+  color: $white;
+  background-color: $yellow-primary;
+  border-radius: 50%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 .fa-clock{
-  color: $yellow-primary;
+  color: $white;
+  background-color: $yellow-primary;
+  border-radius: 50%;
+  padding: 5px;
 }
 .fa-credit-card{
-  color: $yellow-primary;
+  color: $white;
+  background-color: $yellow-primary;
+  border-radius: 50%;
+  padding: 4px;
 }
 
 //--------- CONTAINER FOR CREATE ACCOUNT BOX --------//
