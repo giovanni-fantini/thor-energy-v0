@@ -7,10 +7,13 @@ function autocomplete() {
     if (field) {
       var autocomplete = new google.maps.places.Autocomplete(field, { types: [ 'geocode' ] });
       google.maps.event.addDomListener(field, 'keydown', function(e) {
-        if (e.key === "Enter") {
-          e.preventDefault(); // Do not submit the form on Enter.
-        }
+        if (e.key === "Enter"){}
       });
+      $(field).change((e) => {
+        setTimeout(() => {
+          e.currentTarget.parentNode.submit()
+        }, 500)
+      })
     }
   })
 }
