@@ -5,13 +5,13 @@
         <h1>Need a phone<br> charger?</h1>
         <p>_____</p>
         <div class="form-inline">
-          <%= form_tag "#", method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control-banner autocomplete",
-          placeholder: "Where are you?"
-          %>
-          <%= link_to "Search", "#", class: "bttn-yellow" %>
+          <%= form_tag charging_stations_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control-banner autocomplete",
+              placeholder: "Where are you?"
+            %>
+            <%= submit_tag "Search", class: "bttn-yellow"  %>
           <% end %>
         </div>
       </div>

@@ -26,7 +26,8 @@ const userLocation = new google.maps.Marker({
   icon: userIcon,
   zIndex: 999999
 })
-setInterval(updateUserPosition(userLocation), 1000)
+
+setInterval(() => updateUserPosition(userLocation), 1000)
 
 ////////// MARKERS //////////
 
