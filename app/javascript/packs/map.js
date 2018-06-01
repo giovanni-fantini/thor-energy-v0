@@ -8,6 +8,7 @@ import { userIcon } from '../components/user_icon'
 import { markerIcon } from '../components/marker_icon'
 import { routingIntelligence } from '../components/routing_intelligence'
 import { removeTransportSelection } from '../components/remove_transport_selection'
+import { queryDetector } from '../components/query_detector'
 
 // REMOVED AUTOCOMPLETE CALL FROM HERE
 ////////// MAP //////////
@@ -17,8 +18,9 @@ var map = new google.maps.Map(document.getElementById('map'), {
   styles: mapStyle
 });
 
+
+
 // This is an empty map-bounds object
-const bounds = new google.maps.LatLngBounds();
 
 // User geolocation configuration (updating every second)
 const userLocation = new google.maps.Marker({
@@ -48,7 +50,6 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
     markers.push(marker)
 
     // Adds coordinates of station to bounds
-    bounds.extend(marker.position);
 
     // Markers made clickable
     marker.addListener('click', () => {
@@ -100,7 +101,37 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
   }
 })
 
+
 // Imposes bounds on map to achieve approriate centring and zoom
+const bounds = new google.maps.LatLngBounds();
+
+if (queryDetector()) {
+  const searchQuery = queryDetector()
+
+
+  const geocoder = new google.maps.Geocoder
+  geocoder.geocode({address: searchQuery}, function(results, status) {
+    if (status === 'OK') {
+      console.log(results)
+      if (results[0]) {
+        map.setCenter({
+          lat: results[0].geometry.location.lat(),
+          lng: results[0].geometry.location.lng()
+        })
+        map.setZoom(14)
+      } else {
+        window.alert('Location not found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+  });
+} else {
+  markers.forEach((marker) => {
+    bounds.extend(marker.position);
+  })
+}
+
 map.fitBounds(bounds)
 
 /////AFTER FINISH
