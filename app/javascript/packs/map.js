@@ -24,7 +24,7 @@ const bounds = new google.maps.LatLngBounds();
 const userLocation = new google.maps.Marker({
   map: map,
   icon: userIcon,
-  zIndex: 999999,
+  zIndex: 999999
 })
 setInterval(updateUserPosition(userLocation), 1000)
 

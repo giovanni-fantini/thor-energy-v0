@@ -20,13 +20,13 @@ const optimalRoute = (modeTransport, stations, element, destination) => {
   }
 ///// AFTER FINISH!!!
 
-  return new Promise((resolveTotal, reject) => {
+  return new Promise((mainResolve, reject) => {
      const pushPromisesAndWait = (response, status) =>  {
         arrayOfPromises.push(handleApiResponse(response, status))
         if (arrayOfPromises.length === stations.length) {
           Promise.all(arrayOfPromises)
             .then(response => {
-              resolveTotal(shortestRoute)
+              mainResolve(shortestRoute)
             })
             .catch(error => {
               console.log("brokeeen:", error)
