@@ -5,7 +5,7 @@ const updateUserPosition = (userLocation) => {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-
+      console.log(pos)
       userLocation.setPosition(pos)
 
     }, function(error) {

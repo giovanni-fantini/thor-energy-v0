@@ -7,3 +7,6 @@
   data-userimage="<%= image_path("map_user_marker.svg") %>"
   data-journeyspath="<%= journeys_path %>"
 ></div>
+<% content_for :page_scripts do %>
+  <%= javascript_pack_tag "map" %>
+<% end %>
