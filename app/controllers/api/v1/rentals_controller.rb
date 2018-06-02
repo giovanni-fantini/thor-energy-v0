@@ -21,7 +21,7 @@ class Api::V1::RentalsController < Api::V1::BaseController
     @rental = Rental.find_by(pan_hash: params[:pan_hash])
   end
 
-  def find_all_by_status
+  def find_by_status
     @charging_station = ChargingStation.find(params[:charging_station_id])
     @rentals = @charging_station.rentals.where(status: params[:status]).to_a
   end
