@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_125624) do
+ActiveRecord::Schema.define(version: 2018_06_02_194733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2018_05_31_125624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "location_title"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.bigint "charging_station_id"
+    t.integer "slot_id"
+    t.string "pan_hash"
+    t.integer "transaction_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["charging_station_id"], name: "index_rentals_on_charging_station_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +56,5 @@ ActiveRecord::Schema.define(version: 2018_05_31_125624) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rentals", "charging_stations"
 end
