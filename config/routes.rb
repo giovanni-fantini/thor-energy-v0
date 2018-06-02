@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       end
 
       get 'rentals/:pan_hash', :to => 'rentals#find_by_pan_hash'
-      get 'charging_stations/:charging_station_id/rentals/:status', :to => 'rentals#find_by_status'
+      get 'charging_stations/:charging_station_id/rentals/:status', :to => 'rentals#find_all_by_status'
     end
   end
 end
