@@ -6,10 +6,19 @@ class Api::V1::RentalsController < Api::V1::BaseController
     @rentals = @charging_station.rentals
   end
 
-  def show
+  def create
+    @charging_station = ChargingStation.find(params[:charging_station_id])
+    @rental = Rental.new(rental_params)
+    @rental.charging_station = @charging_station
+    if @rental.save
+      render :show, status: :created
+    else
+      render_error
+    end
   end
 
   def update
+    @rental = Rental.find_by(pan_hash: params[:pan_hash])
     if @rental.update(rental_params)
       render :show
     else
@@ -21,7 +30,7 @@ class Api::V1::RentalsController < Api::V1::BaseController
     @rental = Rental.find_by(pan_hash: params[:pan_hash])
   end
 
-  def find_by_status
+  def find_all_to_be_closed
     @charging_station = ChargingStation.find(params[:charging_station_id])
     @rentals = @charging_station.rentals.where(status: params[:status]).to_a
   end
