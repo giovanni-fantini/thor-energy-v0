@@ -28,6 +28,12 @@ class Api::V1::RentalsController < Api::V1::BaseController
 
   def find_by_pan_hash
     @rental = Rental.find_by(pan_hash: params[:pan_hash], status: "open")
+    if @rental.nil?
+      render json: {
+        error: "Open Rental with pan_hash #{params[:pan_hash]} not found",
+        status: :not_found
+      }
+    end
   end
 
   def find_all_to_be_closed
