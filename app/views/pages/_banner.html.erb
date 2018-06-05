@@ -3,18 +3,28 @@
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <h1>Need a phone<br> charger?</h1>
-        <p>_____</p>
+        <p id="yellow-dash">_____</p>
         <div class="form-inline">
           <%= form_tag charging_stations_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control-banner autocomplete",
-              placeholder: "Where are you?"
-            %>
+            <span class="input-holder">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control-banner autocomplete",
+                placeholder: "Enter location....."
+              %>
+              <%= link_to charging_stations_path + "?current_location" do %>
+                <i class="fas fa-crosshairs"></i>
+              <% end %>
+            </span>
             <%= submit_tag "Search", class: "bttn-yellow"  %>
           <% end %>
         </div>
-        <%= link_to "Use current location", charging_stations_path + "?current_location", class: "bttn-yellow" %>
+        <div class="phone-locate-box">
+          <%= link_to charging_stations_path + "?current_location", class: "phone-locate text-center" do %>
+            <i class="fas fa-crosshairs"></i>
+            <p>Use current location</p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
