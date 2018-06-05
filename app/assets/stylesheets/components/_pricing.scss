@@ -1,9 +1,9 @@
-// BACKGROUND
+// BACKGROUND //
 .banner-3 {
   background-color: $lighter-gray;
 }
 
-// PRICING HEADER
+// PRICING HEADER //
 .pricing-header h1 {
   font-size: 48px;
   color: black;
@@ -20,12 +20,13 @@
   top: -30px;
 }
 
-// PRICING INFORMATION BOX
+// PRICING INFORMATION BOX //
 .pricing-card-container {
   background-color: $white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  height: 450px;
 }
 
 .pricing-card-row-1{
@@ -60,10 +61,9 @@
   padding-right: 50px;
   padding-left: 50px;
   text-align: left;
+  margin: auto;
   color: $dark-gray;
   font-size: 18px;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 .price {
@@ -97,6 +97,10 @@
 .pricing-create-account-container {
   background-color: $black;
   color: $white;
+  margin-bottom: 200px;
+  border-radius: 4px;
+  align-content: center;
+  height: 400px;
 }
 
 .pricing-create-account-container h1 {
@@ -106,5 +110,30 @@
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 24px;
+  border-radius: 4px;
 }
 
+.pricing-form-inputs {
+  width: 300px;
+  margin: auto;
+}
+
+.pricing-form-actions {
+  padding: 20px;
+  margin: auto;
+  height: 25px;
+}
+
+.btn {
+  background-color: $yellow-primary;
+  color: $white;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+
+.btn:hover {
+    background-color: $yellow-secondary;
+    color: $white;
+  }

@@ -1,5 +1,5 @@
 def authenticate_admin!
-  redirect_to root_path, alert: "You're not admin" unless current_user && current_user.admin
+  redirect_to root_path unless current_user && current_user.admin
 end
 
 ActiveAdmin.setup do |config|
