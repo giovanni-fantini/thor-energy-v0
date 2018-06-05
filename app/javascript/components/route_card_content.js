@@ -13,7 +13,7 @@ const routeCardContent = (chargingStation) => {
         <input type="text" class="form-control autocomplete" id="destination" aria-describedby="emailHelp">
       </div>
     </form>
-      <button id="route-search" type="" class="btn btn-primary">Go</button>
+    <button id="route-search" type="" class="btn btn-primary">Go</button>
   `;
   return html
 }

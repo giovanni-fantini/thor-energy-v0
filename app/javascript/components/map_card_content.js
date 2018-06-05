@@ -28,7 +28,7 @@ const mapCardContent = (chargingStation) => {
         </div>
         <div class="bottom">
           <div class="buttons">
-            <div id="create-journey" class="btn btn-primary btn-sm">Create journey</div>
+            <div id="navigate" class="btn btn-primary btn-sm">Navigate here</div>
             <div class="btn btn-primary btn-sm">Reserve battery</div>
           </div>
           <a style="margin-left: 20px;" href="${document.getElementById("map").dataset.journeyspath}">What is this?</a>
