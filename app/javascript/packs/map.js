@@ -9,8 +9,8 @@ import { markerIcon } from '../components/marker_icon'
 import { routingIntelligence } from '../components/routing_intelligence'
 import { removeTransportSelection } from '../components/remove_transport_selection'
 import { queryDetector } from '../components/query_detector'
+import { currentLocation } from '../components/current_location'
 
-// REMOVED AUTOCOMPLETE CALL FROM HERE
 ////////// MAP //////////
 
 // This is the map and map-directions configuration:
@@ -126,6 +126,22 @@ if (queryDetector()) {
       window.alert('Geocoder failed due to: ' + status);
     }
   });
+} else if (currentLocation()) {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      map.setCenter(pos)
+      map.setZoom(14)
+
+    }, function(error) {
+      console.error(error)
+      // handleLocationError(true, userLocation, map.getCenter());
+    });
+  }
+
 } else {
   markers.forEach((marker) => {
     bounds.extend(marker.position);
