@@ -1,4 +1,4 @@
-const fourClosestStations = (lat, lng, markers) => {
+const closestStations = (lat, lng, markers, n) => {
   const mrkWDist = [];
   const mrkWODist = [];
 
@@ -11,9 +11,9 @@ const fourClosestStations = (lat, lng, markers) => {
     mrkWDist.push({marker: marker, distance: d})
   })
 
-  mrkWDist.sort((a,b) => { return a.distance - b.distance }).slice(0,4).forEach((marker) => { mrkWODist.push(marker.marker) })
+  mrkWDist.sort((a,b) => { return a.distance - b.distance }).slice(0,n).forEach((marker) => { mrkWODist.push(marker.marker) })
 
   return mrkWODist
 }
 
-export { fourClosestStations };
+export { closestStations };
