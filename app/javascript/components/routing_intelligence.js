@@ -1,6 +1,7 @@
-import { fourClosestStations } from './four_closest_stations'
+import { closestStations } from './closest_stations'
 import { optimalRoute } from './optimal_route'
 import { directionsRendererOptions } from './directions_renderer_options';
+import { journeyCharge } from './journey_charge';
 
 
 const routingIntelligence = (modeTransport, element, destination, markers, map) => {
@@ -19,12 +20,13 @@ const routingIntelligence = (modeTransport, element, destination, markers, map) 
         lat = results[0].geometry.location.lat()
         lng = results[0].geometry.location.lng()
 
-        const closestStations = fourClosestStations(lat, lng, markers)
-       optimalRoute(modeTransport, closestStations, element, destination)
+        const routeClosestStations = closestStations(lat, lng, markers, 4)
+       optimalRoute(modeTransport, routeClosestStations, element, destination)
         .then((response) => {
           renderRoute.setDirections(response);
           document.querySelector('.content').innerHTML = ""
           renderRoute.setPanel(document.querySelector('#card .container'));
+          document.querySelector('.blob').insertAdjacentHTML("afterend", journeyCharge(response))
         })
         .catch((e) => {
           console.log(e)

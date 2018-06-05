@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :charging_stations, only: [ :show ] do
+      resources :charging_stations, only: [] do
         resources :rentals, only: [ :index, :create ]
       end
 

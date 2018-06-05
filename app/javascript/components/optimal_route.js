@@ -40,7 +40,7 @@ const optimalRoute = (modeTransport, stations, element, destination) => {
         userRoute.route({
           origin: element["position"],
           destination: destination,
-          waypoints: [{location: station.position, stopover: false}],
+          waypoints: [{location: station.position, stopover: true}],
           travelMode: modeTransport
         }, pushPromisesAndWait);
       })
