@@ -10,6 +10,7 @@ import { routingIntelligence } from '../components/routing_intelligence'
 import { removeTransportSelection } from '../components/remove_transport_selection'
 import { queryDetector } from '../components/query_detector'
 import { currentLocation } from '../components/current_location'
+import { closestStations } from '../components/closest_stations'
 
 ////////// MAP //////////
 
@@ -48,8 +49,6 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
     });
 
     markers.push(marker)
-
-    // Adds coordinates of station to bounds
 
     // Markers made clickable
     marker.addListener('click', () => {
@@ -104,7 +103,6 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
 
 // Imposes bounds on map to achieve approriate centring and zoom
 const bounds = new google.maps.LatLngBounds();
-
 if (queryDetector()) {
   const searchQuery = queryDetector()
 
@@ -112,13 +110,14 @@ if (queryDetector()) {
   const geocoder = new google.maps.Geocoder
   geocoder.geocode({address: searchQuery}, function(results, status) {
     if (status === 'OK') {
-      console.log(results)
       if (results[0]) {
-        map.setCenter({
+        bounds.extend({
           lat: results[0].geometry.location.lat(),
           lng: results[0].geometry.location.lng()
         })
-        map.setZoom(14)
+        const station = closestStations(results[0].geometry.location.lat(), results[0].geometry.location.lng(), markers, 1)
+        bounds.extend(station[0].position)
+        map.fitBounds(bounds)
       } else {
         window.alert('Location not found');
       }
@@ -129,13 +128,13 @@ if (queryDetector()) {
 } else if (currentLocation()) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      bounds.extend({
         lat: position.coords.latitude,
         lng: position.coords.longitude
-      };
-      map.setCenter(pos)
-      map.setZoom(14)
-
+      })
+      const station = closestStations(position.coords.latitude, position.coords.longitude, markers, 1)
+      bounds.extend(station[0].position)
+      map.fitBounds(bounds)
     }, function(error) {
       console.error(error)
       // handleLocationError(true, userLocation, map.getCenter());
@@ -146,8 +145,7 @@ if (queryDetector()) {
   markers.forEach((marker) => {
     bounds.extend(marker.position);
   })
+  map.fitBounds(bounds)
 }
-
-map.fitBounds(bounds)
 
 /////AFTER FINISH
