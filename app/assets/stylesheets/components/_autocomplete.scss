@@ -2,23 +2,26 @@
   background-color: $black-primary;
   border-radius: 4px;
   border: none;
-
-}
-
-.pac-icon {
-  color: $yellow-primary !important;
 }
 
 .pac-item {
   font-family: $body-font;
   color: $light-gray;
   font-size: 14px;
-   border: none;
+  border: none;
 }
 
 .pac-item:hover {
   background-color: rgb(50,50,50);
   cursor: pointer;
+}
+
+.pac-item-selected {
+  background-color: rgb(50,50,50);
+}
+
+.pac-icon-selected {
+  color: $yellow-primary!important;
 }
 
 .pac-item-query {
