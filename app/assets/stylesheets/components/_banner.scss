@@ -14,7 +14,7 @@
   color: $white;
 }
 
-.banner p {
+#yellow-dash {
   color: $yellow-primary;
   font-size: 32px;
   position: absolute;
@@ -36,4 +36,50 @@
 
 .form-control-banner::placeholder {
   color: $yellow-primary;
+}
+
+.banner {
+  .input-holder {
+    position: relative;
+    i {
+      position: absolute;
+      top: 2px;
+      right: 25px;
+      opacity: 0.5;
+    }
+    i:hover {
+      opacity: 1;
+      color: $yellow-primary;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .phone-locate {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    .input-holder {
+      position: relative;
+      i {
+        display: none;
+      }
+    }
+    .phone-locate-box {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      i {
+        font-size: 40px;
+        padding: 10px;
+      }
+    }
+  }
+  .banner .phone-locate-box a:hover {
+    text-decoration: none;
+  }
 }

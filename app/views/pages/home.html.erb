@@ -2,3 +2,6 @@
 <%= render 'how' %>
 <%= render 'slideshow' %>
 <%= render 'pricing' %>
+<% content_for :page_scripts do %>
+  <%= javascript_pack_tag "home" %>
+<% end %>
