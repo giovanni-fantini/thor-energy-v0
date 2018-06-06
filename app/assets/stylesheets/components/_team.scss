@@ -1,0 +1,70 @@
+.avatar-team {
+  max-width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team {
+  background-color: $white;
+}
+
+.container.team {
+  h1 {
+    color: $yellow-primary;
+    font-weight: bold;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  h4 {
+    color: $yellow-primary;
+    text-align: center;
+  }
+  p {
+    font-weight: italic;
+    text-align: center;
+  }
+}
+
+
+// CODE FOR THE IMAGE FLIPPER //
+.flip-container {
+  perspective: 1000px;
+}
+// HOVER FOR THE FLIPPENING!!!! //
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+// FLIP SPEED //
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+// THIS HIDES THE BACK OF THE PANE //
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  backface-visibility: hidden;
+}
+
+// FRONT PANE WHEN PLACED ABOVE THE BACK //
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+// THIS IS THE HIDDEN PANE IN THE BACK //
+.back {
+  transform: rotateY(180deg);
+}
