@@ -4,21 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  p {
+    margin-bottom: 7px;
+  }
 }
 
 .banner h1 {
   font-size: 56px;
   font-weight: bold;
-  position: absolute;
   top: -170px;
   color: $white;
+  margin: 0;
 }
 
 #yellow-dash {
   color: $yellow-primary;
   font-size: 32px;
-  position: absolute;
   top: -52.5px;
+  margin-top: -30px;
 }
 
 
@@ -52,6 +55,9 @@
       color: $yellow-primary;
     }
   }
+  input {
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -67,7 +73,6 @@
     }
   }
   .banner {
-    padding-top: 20vh;
     .input-holder {
       position: relative;
       i {
@@ -75,17 +80,25 @@
       }
     }
     .phone-locate-box {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      i {
-        font-size: 40px;
-        padding: 10px;
+      margin-top: -5px;
+      .phone-locate {
+        display: flex;
+        align-items: center;
+        opacity: 0.4;
+        i {
+          font-size: 20px;
+          padding: 5px 10px 5px 20px;
+        }
+        p {
+          margin: 0;
+          font-size: 14px;
+        }
       }
     }
   }
   .banner .phone-locate-box a:hover {
     text-decoration: none;
+    opacity: 1;
+    color: $yellow-primary;
   }
 }
