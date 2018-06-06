@@ -13,6 +13,7 @@ import { currentLocation } from '../components/current_location'
 import { closestStations } from '../components/closest_stations'
 import { firstRouteCardContent} from '../components/first_route_card_content'
 import { firstRouteRender } from '../components/first_route_render'
+import { journeyPlanner } from '../components/journey_planner'
 
 ////////// MAP //////////
 
@@ -74,44 +75,35 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
           removeTransportSelection()
           document.querySelector(".fa-car").classList.add("active")
           modeTransport = "DRIVING"
-          firstRouteRender(map, userLocation, modeTransport, marker)
+          firstRouteRender(map, userLocation, modeTransport, marker, markers)
         })
         document.querySelector(".fa-walking").addEventListener("click", () => {
           removeTransportSelection()
           document.querySelector(".fa-walking").classList.add("active")
           modeTransport = "WALKING"
-          firstRouteRender(map, userLocation, modeTransport, marker)
+          firstRouteRender(map, userLocation, modeTransport, marker, markers)
         })
         document.querySelector(".fa-bicycle").addEventListener("click", () => {
           removeTransportSelection()
           document.querySelector(".fa-bicycle").classList.add("active")
           modeTransport = "BICYCLING"
-          firstRouteRender(map, userLocation, modeTransport, marker)
+          firstRouteRender(map, userLocation, modeTransport, marker, markers)
         })
         document.querySelector(".fa-subway").addEventListener("click", () => {
           removeTransportSelection()
           document.querySelector(".fa-subway").classList.add("active")
           modeTransport = "TRANSIT"
-          firstRouteRender(map, userLocation, modeTransport, marker)
+          firstRouteRender(map, userLocation, modeTransport, marker, markers)
         })
 
-
-
-
-        document.getElementById("journey").addEventListener("click", () => {
-          document.querySelector('.content').innerHTML = ""
-          document.querySelector('.content').insertAdjacentHTML("afterbegin", routeCardContent(element))
-          autocomplete()
-          let modeTransport = "WALKING"
-
-          // Go button functionality
-          document.getElementById('route-search').addEventListener("click", () => {
-            const destination = document.getElementById('destination').value
-            //// Route planning intelligence ////
-            routingIntelligence(modeTransport, element, destination, markers, map)
-            /////////////////////////////////////////
-          })
-        })
+        //   // Go button functionality
+        //   document.getElementById('route-search').addEventListener("click", () => {
+        //     const destination = document.getElementById('destination').value
+        //     //// Route planning intelligence ////
+        //     routingIntelligence(modeTransport, element, destination, markers, map)
+        //     /////////////////////////////////////////
+        //   })
+        // })
       })
     });
   }
