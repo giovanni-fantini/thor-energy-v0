@@ -12,7 +12,6 @@ const closestStations = (lat, lng, markers, n) => {
   })
 
   mrkWDist.sort((a,b) => { return a.distance - b.distance }).slice(0,n).forEach((marker) => { mrkWODist.push(marker.marker) })
-
   return mrkWODist
 }
 
