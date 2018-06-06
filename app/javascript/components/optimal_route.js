@@ -1,4 +1,4 @@
-const optimalRoute = (modeTransport, stations, element, destination) => {
+const optimalRoute = (modeTransport, stations, element, destination, userLocation) => {
   let minDuration = Math.pow(10, 10)
   let shortestRoute
   let arrayOfPromises = []
@@ -36,11 +36,10 @@ const optimalRoute = (modeTransport, stations, element, destination) => {
 
       stations.forEach((station) => {
         const userRoute = new google.maps.DirectionsService
-
         userRoute.route({
-          origin: element["position"],
+          origin: userLocation.position,
           destination: destination,
-          waypoints: [{location: station.position, stopover: true}],
+          waypoints: [{location: element.position, stopover: true}, {location: station.position, stopover: true}],
           travelMode: modeTransport
         }, pushPromisesAndWait);
       })

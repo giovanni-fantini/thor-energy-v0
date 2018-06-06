@@ -4,7 +4,7 @@ import { directionsRendererOptions } from './directions_renderer_options';
 import { journeyCharge } from './journey_charge';
 
 
-const routingIntelligence = (modeTransport, element, destination, markers, map) => {
+const routingIntelligence = (modeTransport, element, destination, markers, map, userLocation) => {
 
   const renderRoute = new google.maps.DirectionsRenderer(directionsRendererOptions);
   renderRoute.setMap(map)
@@ -20,8 +20,8 @@ const routingIntelligence = (modeTransport, element, destination, markers, map) 
         lat = results[0].geometry.location.lat()
         lng = results[0].geometry.location.lng()
 
-        const routeClosestStations = closestStations(lat, lng, markers, 4)
-       optimalRoute(modeTransport, routeClosestStations, element, destination)
+        const routeClosestStations = closestStations(lat, lng, markers, 3)
+       optimalRoute(modeTransport, routeClosestStations, element, destination, userLocation)
         .then((response) => {
           renderRoute.setDirections(response);
           document.querySelector('.content').innerHTML = ""
