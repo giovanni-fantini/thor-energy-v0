@@ -61,7 +61,13 @@
 }
 
 @media (max-width: 991px) {
+  .phone-locate {
+    p {
+      font-weight: 600;
+    }
+  }
   .banner {
+    padding-top: 20vh;
     .input-holder {
       position: relative;
       i {

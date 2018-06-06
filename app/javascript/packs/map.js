@@ -124,8 +124,10 @@ if (queryDetector()) {
           lat: results[0].geometry.location.lat(),
           lng: results[0].geometry.location.lng()
         })
-        const station = closestStations(results[0].geometry.location.lat(), results[0].geometry.location.lng(), markers, 1)
-        bounds.extend(station[0].position)
+        const stations = closestStations(results[0].geometry.location.lat(), results[0].geometry.location.lng(), markers, 2)
+        stations.forEach((station) => {
+          bounds.extend(station.position)
+        })
         map.fitBounds(bounds)
       } else {
         window.alert('Location not found');
@@ -141,8 +143,10 @@ if (queryDetector()) {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       })
-      const station = closestStations(position.coords.latitude, position.coords.longitude, markers, 1)
-      bounds.extend(station[0].position)
+      const stations = closestStations(position.coords.latitude, position.coords.longitude, markers, 2)
+      stations.forEach((station) => {
+        bounds.extend(station.position)
+      })
       map.fitBounds(bounds)
     }, function(error) {
       console.error(error)
