@@ -1,3 +1,7 @@
+.about {
+  background-color: $black;
+}
+
 .container.about-us {
   background-color: $black;
   h1 {
@@ -17,9 +21,16 @@
 
 .about-us-img {
   position: absolute;
-  bottom: 50px;
+  bottom: 20px;
   opacity: 0.1;
   transform: rotate(45deg)
+}
+
+.big-hammer {
+ transform: rotate(45deg);
+ position: relative;
+ right: 150px;
+ opacity: 0.1;
 }
 
 #yellow-line {
