@@ -14,7 +14,12 @@ const mapCardContent = (chargingStation) => {
             <div class="address">
               <h2>Address</h2>
               <p>${chargingStation.address}</p>
-              <p><strong style="color: black;">Lat: </strong>${chargingStation.position.lat} <strong style="color: black;">Lng: </strong>${chargingStation.position.lng}</p>
+              <p>
+                <div class="latlng">
+                  <div class="lat"><strong style="color: black;">Lat: </strong>${chargingStation.position.lat} </div>
+                  <div><strong style="color: black;">Lng: </strong>${chargingStation.position.lng} </div>
+                </div>
+              </p>
             </div>
             <div class="battery-info">
               <h2>Batteries available</h2>

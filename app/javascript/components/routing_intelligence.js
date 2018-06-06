@@ -25,8 +25,8 @@ const routingIntelligence = (modeTransport, element, destination, markers, map, 
         .then((response) => {
           renderRoute.setDirections(response);
           document.querySelector('.content').innerHTML = ""
-          renderRoute.setPanel(document.querySelector('#card .container'));
-          document.querySelector('.blob').insertAdjacentHTML("afterend", journeyCharge(response))
+          document.querySelector('#card .container .content').insertAdjacentHTML("afterbegin", journeyCharge(response))
+          renderRoute.setPanel(document.querySelector('#card .container .content'));
         })
         .catch((e) => {
           console.log(e)
