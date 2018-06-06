@@ -161,4 +161,11 @@ if (queryDetector()) {
   map.fitBounds(bounds)
 }
 
+map.addListener("click", () => {
+  if (document.getElementById("card")) {
+    document.getElementById("card").remove()
+    document.getElementById("map").style.height = "100vh"
+  }
+})
+
 /////AFTER FINISH
