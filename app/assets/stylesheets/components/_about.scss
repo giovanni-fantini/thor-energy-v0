@@ -1,0 +1,27 @@
+.container.about-us {
+  background-color: $black;
+  h1 {
+    color: $yellow-primary;
+  }
+  h3 {
+    color: $white;
+    margin-bottom: 0;
+  }
+  p {
+    color: $white;
+  }
+}
+.row-relative {
+  position: relative;
+}
+
+.about-us-img {
+  position: absolute;
+  bottom: 50px;
+  opacity: 0.1;
+  transform: rotate(45deg)
+}
+
+#yellow-line {
+  color: $yellow-primary;
+}

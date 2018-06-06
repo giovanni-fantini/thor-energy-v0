@@ -13,7 +13,7 @@
       <!-- Links when logged in -->
       <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Locations", charging_stations_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Our Team", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "About Us", "about", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Contact Us", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -43,7 +43,7 @@
       <!-- Links when logged out -->
       <%= link_to "Home", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Locations", charging_stations_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Our Team", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "About Us", "about", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Contact Us", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Login link (when logged out) -->
@@ -60,7 +60,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href= <%= root_path %> >Home</a></li>
         <li><a href= <%= charging_stations_path %> >Locations</a></li>
-        <li><a href="#">Our Team</a></li>
+        <li><a href="about">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
         <li class="app-bttn-yellow">Download the APP</li>
       </ul>
