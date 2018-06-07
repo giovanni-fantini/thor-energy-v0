@@ -31,7 +31,6 @@ const routingIntelligence = (modeTransport, element, destination, markers, map, 
         .catch((e) => {
           console.log(e)
         })
-
       } else {
         window.alert('No results found');
       }

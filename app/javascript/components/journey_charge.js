@@ -1,7 +1,10 @@
 const journeyCharge = (response) => {
-  console.log(response)
+  let charge = Math.round(response.routes["0"].legs["1"].duration.value / 3600 * 80 / 2)
+
+  if (charge > 100) { charge = 100}
+
   const html = `
-    <p class="text-center"> Charge gained on this journey: ${Math.round(response.routes["0"].legs["1"].duration.value / 3600 * 80 / 2)}%</p>
+    <p class="text-center"> Charge gained on this journey: ${charge}%</p>
   `
   return html
 }
