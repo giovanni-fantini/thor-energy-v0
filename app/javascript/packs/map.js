@@ -109,6 +109,12 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
   }
 })
 
+const markerCluster = new MarkerClusterer(map, markers, {
+  imagePath: document.getElementById('map').dataset.cluster.split("1")[0],
+  gridSize: 50,
+  maxZoom: 12,
+  minimumClusterSize: 3
+});
 
 // Imposes bounds on map to achieve approriate centring and zoom
 const bounds = new google.maps.LatLngBounds();

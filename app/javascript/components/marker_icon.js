@@ -1,6 +1,6 @@
 const markerIcon = {
   url: document.getElementById('map').dataset.markerimage,
-  scaledSize: new google.maps.Size(50, 50),
+  scaledSize: new google.maps.Size(40, 40),
 };
 
 export { markerIcon };
