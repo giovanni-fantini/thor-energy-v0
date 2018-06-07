@@ -68,3 +68,21 @@
 .back {
   transform: rotateY(180deg);
 }
+
+// READ MORE FOR THE BIO PAGE: //
+.bio {
+  text-align: center;
+  padding: none;
+}
+
+.bio-btn {
+  color: $dark-gray;
+  border: none;
+  background-color: none;
+  font-size: 14px;
+  :hover {
+    color: $yellow-primary;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
