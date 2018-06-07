@@ -4,30 +4,44 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
   </ol>
-  <h1 class="main-header">CHARGING MADE EASY</h1>
-
+<!--   <h1 class="main-header">CHARGING MADE EASY</h1> -->
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <div class="car-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.pexels.com/photos/1093906/pexels-photo-1093906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-        <p class="sub-header">Open up the app.</p>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_1') %>)">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_2') %>)">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_3') %>)">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_4') %>)">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_5') %>)">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="car-img" style="background-image: url(<%= image_path('instructional_slides_6') %>)">
+        </div>
       </div>
     </div>
-
-
-    <div class="item">
-      <div class="car-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.pexels.com/photos/297755/pexels-photo-297755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-        <p class="sub-header">Locate the closest charger.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="car-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://images.pexels.com/photos/1116984/pexels-photo-1116984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-        <p class="sub-header">Grab and go!</p>
-      </div>
-    </div>
-  </div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
