@@ -110,7 +110,7 @@ JSON.parse(document.getElementById('map').dataset.markers).forEach((element) => 
 })
 
 const markerCluster = new MarkerClusterer(map, markers, {
-  imagePath: document.getElementById('map').dataset.cluster.split("1")[0],
+  imagePath: document.getElementById('map').dataset.cluster,
   gridSize: 50,
   maxZoom: 12,
   minimumClusterSize: 3
