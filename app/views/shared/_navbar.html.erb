@@ -59,7 +59,7 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href= <%= root_path %> >Home</a></li>
-        <li><a href= <%= user_path(current_user) %> >Profile</a></li>
+        <li><a href= <%= user_path(current_user) if current_user %> >Profile</a></li>
         <li><a href= <%= charging_stations_path %> >Locations</a></li>
         <li><a href=<%= about_path %>>About Us</a></li>
         <li><a href=<%= contact_path %>>Contact Us</a></li>
