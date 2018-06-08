@@ -1,0 +1,76 @@
+<div class="user-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
+        <div class="user-profile">
+          <h1><%= @user.full_name %></h1>
+          <h2><%= @user.email %></h2>
+          <h3>Total rentals:</h3>
+          <p id="rentals-count"><%= @user.rentals.length %></p>
+
+          <!-- FEATURE TO BE ADDED -->
+          <!-- <h3>Points:</h3> -->
+          <!-- <p id="points-count">0</p> -->
+          <!--  -->
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-sm-7">
+        <div class="user-rentals">
+          <h2>Open <span class="small">(<%= @user.open_rentals.length %>)</span></h2>
+          <div class="open-rentals">
+            <% @user.open_rentals.reverse.each do |rental| %>
+              <div class="rental-card">
+                <p class="rental-id">id: <span class="yellow"><%= rental.id %></span></p>
+                <div class="rental-flex">
+                  <div class="rental-flex-item">
+                    <p class="text-center">Rented from:</p>
+                    <p class="yellow text-center strong"><%= rental.charging_station.location_title %></p>
+                  </div>
+                  <div class="rental-flex-item">
+                    <p class="text-center">Started at:</p>
+                    <p class="yellow text-center strong"><%= rental.created_at.to_s.split(" ")[1] %></p>
+                  </div>
+                  <div class="rental-flex-item">
+                    <p class="text-center">Remaining time:</p>
+                    <p class="yellow text-center strong"><%= Time.at(rental.created_at + 23.hour - Time.zone.now).utc.strftime("%H:%M:%S")%></p>
+
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <h2>Closed <span class="small">(<%= @user.closed_rentals.length %>)</span></h2>
+          <div class="closed-rentals">
+            <% @user.closed_rentals.reverse.each do |rental| %>
+              <div class="rental-card">
+                <p class="rental-id">id: <span class="yellow"><%= rental.id %></span></p>
+                <p class="rental-price">£<%= rental.price %></p>
+                <div class="rental-flex">
+                  <div class="start-end-flex">
+                    <div id="vert-rental-flex-item">
+                      <div class="dot-ring"></div>
+                      <p class="text-center strong"><%= rental.charging_station.location_title %></p>
+                      <p><%= rental.created_at.to_s.split(" ")[1] %></p>
+                    </div>
+                    <i class="fas fa-walking"></i>
+                    <div id="vert-rental-flex-item">
+                      <div class="dot-solid"></div>
+                      <p class="text-center strong">*Dropoff location*</p>
+                      <p><%= rental.updated_at.to_s.split(" ")[1] %></p>
+                    </div>
+                  </div>
+                  <div id="vert-rental-flex-item">
+                    <i class="far fa-clock"></i>
+                    <p class="text-center strong"><%= Time.at(rental.updated_at - rental.created_at).utc.strftime("%H:%M:%S")%></p>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
