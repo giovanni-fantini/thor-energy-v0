@@ -9,6 +9,7 @@ class PagesController < ApplicationController
       {
         first_name: "Giovanni",
         last_name: "Fantini",
+        age: 23,
         email: "gio@thor.energy",
         description: "B.Sc. in Finance at Bocconi University. While studying he
         worked in a restaurant business for 2 years starting as waiter and ending
@@ -24,6 +25,7 @@ class PagesController < ApplicationController
       {
         first_name: "Giacomo",
         last_name: "Camisassa",
+        age: 24,
         email: "giacomo@thor.energy",
         description: "B.Sc. in Economics, M.Sc. In Management from Bocconi University,
         Post Graduate Program in Management from the Indian Institute of Management - Ahmedabad.
@@ -39,6 +41,7 @@ class PagesController < ApplicationController
       {
         first_name: "Laura",
         last_name: "Lezcano",
+        age: 25,
         email: "laura@thor.energy",
         description: "B.D. in Digital Animation at the Latin University of Panama and Master
         in Design at Istituto Europeo di Design. Works with clients from around the world
@@ -49,6 +52,7 @@ class PagesController < ApplicationController
       {
         first_name: "Matteo",
         last_name: "de Cicco",
+        age: 30,
         email: "matteo@thor.energy",
         description: "B.Sc. In Electronics Engineering and M.Sc. In Electrical and Electronics Engineering
         – Embedded System. Currently Head of Engineering at Hanhaa (IoT) he was previously in charge of
@@ -59,6 +63,7 @@ class PagesController < ApplicationController
       {
         first_name: "Riccardo",
         last_name: "Arciulo",
+        age: 35,
         email: "riccardo@thor.energy",
         description: "B.Sc. in Electronics Engineering and M.Sc, in Robotics and Automation Engineering.
         He was responsible for the hardware design and robot programming for several firms during his
@@ -69,6 +74,7 @@ class PagesController < ApplicationController
       {
         first_name: "Alessandro",
         last_name: "Francia",
+        age: 28,
         email: "alessandro@thor.energy",
         description: "B.Sc. and M.Sc. in Computer Science. Currently Implementation leader in IGT (gaming)
         he spent several years in the company working first as a Software Developer and then as Technical
@@ -79,6 +85,7 @@ class PagesController < ApplicationController
       {
         first_name: "Masaki",
         last_name: "Noguchi",
+        age: 23,
         email: "masaki@thor.energy",
         description: "B.Sc in Business Administration from the University of California, Berkeley.
         Worked in the technology investment banking division of William Blair & Co. in San Francisco, CA,
@@ -88,6 +95,7 @@ class PagesController < ApplicationController
       {
         first_name: "Sam",
         last_name: "Jenkins",
+        age: 23,
         email: "sam@thor.energy",
         description: "B.A. in Physics and Philosophy at the University of Oxford. Upon graduation Sam
         moved to London to study web-development and programming at Le Wagon, where he met Masaki and
