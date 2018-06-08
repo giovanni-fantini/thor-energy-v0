@@ -46,13 +46,15 @@
       <%= link_to "About Us", "about", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Contact Us", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <!-- LOGIN LINK (when logged out) -->
+      <%= link_to "Sign Up", "", class: "bio-btn", data: {toggle:"modal", target: "#signUpModalCenter"}, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Log In", "", class: "bio-btn", data: {toggle:"modal", target: "#logInModalCenter"}, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
+  <!-- MOBILE DROPDOWN LIST -->
 
+  <% if user_signed_in? %>
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <a href = <%= charging_stations_path %>> <i class="fas fa-map-marker-alt"></i></a>
     <div class="dropdown">
@@ -64,8 +66,29 @@
         <li><a href=<%= about_path %>>About Us</a></li>
         <li><a href=<%= contact_path %>>Contact Us</a></li>
         <li class="app-bttn-yellow">Download the APP</li>
+        <li><a href= <%= link_to destroy_user_session_path, method: :delete do %> <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %></li>
       </ul>
     </div>
   </div>
+  <% else %>
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <a href = <%= charging_stations_path %>> <i class="fas fa-map-marker-alt"></i></a>
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href= <%= root_path %> >Home</a></li>
+          <li><a href= <%= charging_stations_path %> >Locations</a></li>
+          <li><a href=<%= about_path %>>About Us</a></li>
+          <li><a href=<%= contact_path %>>Contact Us</a></li>
+          <li><a href=<%= link_to "Sign Up", "", class: "bio-btn", data: {toggle:"modal", target: "#signUpModalCenter"} %></a></li>
+          <li><a href=<%= link_to "Log In", "", class: "bio-btn", data: {toggle:"modal", target: "#logInModalCenter"} %></a></li>
+          <li class="app-bttn-yellow">Download the APP</li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 </div>
 
+<%= render 'pages/log_in' %>
+<%= render 'pages/sign_up' %>
