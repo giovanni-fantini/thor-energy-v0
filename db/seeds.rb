@@ -26,7 +26,7 @@ end
 
 
 # ChargingStation.delete_all
-# ChargingStation.create!(location_title: "Le Wagon", address: "138 Kingsland Road, London", status: true, capacity: 1, battery_count: 1)
+ChargingStation.create!(location_title: "Le Wagon", address: "138 Kingsland Road, London", status: true, capacity: 1, battery_count: 1)
 ChargingStation.create!(location_title: "Google Campus", address: " 4-5 Bonhill St, Shoreditch, London", status: true, capacity: 1, battery_count: 1)
 ChargingStation.create!(location_title: "Singer Tavern", address: "1 City Rd, London", status: true, capacity: 1, battery_count: 1)
 # ChargingStation.create!(location_title: "Kings Cross", address: "Kings Cross, London", status: true, capacity: 1, battery_count: 1)
