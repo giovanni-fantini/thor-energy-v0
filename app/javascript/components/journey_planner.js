@@ -16,7 +16,7 @@ const journeyPlanner = (modeTransport, marker, markers, map, userLocation) => {
       waypoints[1].insertAdjacentHTML("beforebegin", `<h1 class="text-center direction-insert">Battery Pickup:</h1>`)
       waypoints[2].insertAdjacentHTML("beforebegin", `<h1 class="text-center direction-insert">Battery Dropoff:</h1>`)
       document.querySelectorAll(".adp-placemark img").forEach((marker) => {marker.remove()})
-      }, 1000)
+      }, 3000)
     })
   })
 }
