@@ -65,11 +65,11 @@
         <li><a href= <%= charging_stations_path %> >Locations</a></li>
         <li><a href=<%= about_path %>>About Us</a></li>
         <li><a href=<%= contact_path %>>Contact Us</a></li>
-        <li class="app-bttn-yellow">Download the APP</li>
         <li><%= link_to destroy_user_session_path, method: :delete do %>
           <i class="fa fa-sign-out"></i>
           <%= t(".sign_out", default: "Log out") %>
           <% end %></li>
+        <li class="app-bttn-yellow">Download the APP</li>
       </ul>
     </div>
   </div>
