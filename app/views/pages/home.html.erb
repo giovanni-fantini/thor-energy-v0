@@ -1,6 +1,13 @@
+<% require "browser/aliases" %>
+<% Browser::Base.include(Browser::Aliases) %>
+
 <%= render 'banner' %>
 <%= render 'how' %>
-<%= render 'slideshow_mobile' %>
+<% if browser.mobile? %>
+  <%= render 'slideshow_mobile' %>
+<% else %>
+  <%= render 'slideshow' %>
+<% end %>
 
 <%= render 'pricing' %>
 <% content_for :page_scripts do %>

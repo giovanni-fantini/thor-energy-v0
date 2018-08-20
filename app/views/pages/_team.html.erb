@@ -1,7 +1,7 @@
 <div class="team">
   <div class="container team">
     <h1>The Team</h1>
-    <h3>Some are here from the start</h3>
+    <h3>The Founders</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -43,22 +43,25 @@
         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
           <div class="flipper">
             <div class="front">
-              <%= image_tag 'cto.png', class: "avatar-team" %>
+              <%= image_tag 'matteo_yellow.png', class: "avatar-team" %>
             </div>
             <div class="back">
-              <%= image_tag 'cto2.png', class: "avatar-team" %>
+              <%= image_tag 'avatar_matteo.png', class: "avatar-team" %>
+
             </div>
           </div>
         </div>
         <div class="bio">
-          <h4>Searching...</h4>
+          <h4>Matteo de Cicco</h4>
           <p>CTO & Co-founder</p>
-          <!-- #link_to "Read More", "", class: "bio-btn", data: {toggle:"modal", target: "#giacomoModal"} -->
+
+          <%= link_to "Read More", "", class: "bio-btn", data: {toggle:"modal", target: "#matteoModal"} %>
+
         </div>
       </div>
     </div>
 
-    <h3>... and some came later to support us</h3>
+    <h3>Consultants and collaborators</h3>
 
     <div class="row">
       <div class="col-xs-12 col-sm-4 col-md-4">
@@ -76,24 +79,6 @@
           <h4>Laura Lezcano</h4>
           <p>Graphic Designer</p>
           <%= link_to "Read More", "", class: "bio-btn", data: {toggle:"modal", target: "#lauraModal"} %>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-          <div class="flipper">
-            <div class="front">
-              <%= image_tag 'matteo_yellow.png', class: "avatar-team" %>
-            </div>
-            <div class="back">
-              <%= image_tag 'avatar_matteo.png', class: "avatar-team" %>
-            </div>
-          </div>
-        </div>
-        <div class="bio">
-          <h4>Matteo de Cicco</h4>
-          <p>Senior Engineer Hardware / Software Implementation</p>
-          <%= link_to "Read More", "", class: "bio-btn", data: {toggle:"modal", target: "#matteoModal"} %>
         </div>
       </div>
 
