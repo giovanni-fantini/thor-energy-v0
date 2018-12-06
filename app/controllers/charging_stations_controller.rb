@@ -1,7 +1,7 @@
 class ChargingStationsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    flash[:notice] = "The map has been populated with random locations for demonstrative purposes."
+    flash.now[:notice] = "The map has been populated with random locations for demonstrative purposes."
     @charging_stations = ChargingStation.all
 
     @markers = @charging_stations.map do |charging_station|
